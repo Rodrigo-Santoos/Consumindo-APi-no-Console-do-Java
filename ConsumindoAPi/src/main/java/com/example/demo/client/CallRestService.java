@@ -11,9 +11,18 @@ public class CallRestService implements CommandLineRunner {
 
 	private static void callRestService() {
 		RestTemplate restTemplate = new RestTemplate();
-		Person person = restTemplate.getForObject("https://apirest-pacientes.herokuapp.com/api/pacientes/1",
+		Person person = restTemplate.getForObject("https://apirest-pacientes.herokuapp.com/api/pacientes/2",
 				Person.class);
-		System.out.println("O nome da pessoa é: " + person.getNome());
+		System.out.println("Paciente com a id " + person.getId());
+		System.out.println("Nome: " + person.getNome());
+		System.out.println("Idade: " + person.getIdade());
+		System.out.println("Sexo: " + person.getSexo());
+		System.out.println("Telefone: " + person.getTelefone());
+		System.out.println("Endereço: " + person.getEndereco());
+		System.out.println("Estado Civil: "  + person.getEstado_civil());
+		System.out.println("Cep: " + person.getCep());
+		System.out.println("Local Nascimento: " + person.getLocal_nascimento());
+		System.out.println("Historico do Paciente: " + person.getHistorico_paciente());
 	}
 
 	@Override
